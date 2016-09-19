@@ -1,0 +1,32 @@
+/* SOCIAL SHARING - AddToAny
+-------------------------------------------------- */
+.social-sharing {
+    margin-bottom: 35px;
+    /* decrease add2any value when widget is floating or it might cover navigation menu e.g. on small devices */
+    z-index: 1000 !important;
+}
+
+/*
+ Make addtoany sharing icons squared (by default they're rounded) https://www.addtoany.com/buttons/customize/square_icons
+*/
+.square-icons .a2a_svg, .square-icons .a2a_count {
+    border-radius: 0 !important;
+}
+
+.square-icons .a2a_menu, .square-icons .a2a_menu_find_container {
+    border-radius: 0 !important;
+}
+
+.a2a_floating_style.a2a_vertical_style{
+  left:0px;
+  top:150px;
+}
+
+.a2a_floating_style.a2a_default_style{
+  bottom:0px;
+  right:0px;
+}
+
+.a2a_vertical_style{
+  left:0px;
+}

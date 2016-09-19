@@ -1,0 +1,39 @@
+form:
+  tabs:
+    - name: tabMain
+      fields:
+        - name: size
+          class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+          options:
+            - name: default
+              value: default
+              selected: true
+            - name: 16
+              value: 16
+            - name: 24
+              value: 24
+            - name: 32
+              value: 32
+            - name: 48
+              value: 48
+        - name: floating
+          class: info.magnolia.ui.form.field.definition.OptionGroupFieldDefinition
+          sortOptions: false
+          options: &yesno # named reference for these yes/no options
+            - name: default
+              value: default
+              selected: true
+            - name: yes
+              value: true
+            - name: no
+              value: false
+        - name: vertical
+          class: info.magnolia.ui.form.field.definition.OptionGroupFieldDefinition
+          sortOptions: false
+          options: *yesno # reference to above yes/no option
+
+actions:
+  commit:
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition
+  cancel:
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition

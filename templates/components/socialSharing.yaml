@@ -1,0 +1,25 @@
+templateScript: /social-sharing-addtoany-component/templates/components/socialSharing.ftl
+dialog: social-sharing-addtoany-component:components/socialSharing
+
+renderType: freemarker
+
+# Provide some default values, which can optionally be over-ridden by authors in the dialog.
+parameters:
+  rounded: false
+  size: 32
+  vertical: false
+  floating: false
+  services:
+    # Consult https://www.addtoany.com/ to see what other services are supported.
+    - name: facebook
+      selected: true
+    - name: twitter
+      selected: true
+    - name: google_plus
+      selected: true
+    - name: pinterest
+    - name: linkedin
+      selected: true
+    - name: email
+    - name: reddit
+    - name: stumbleupon
