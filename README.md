@@ -17,7 +17,8 @@ See https://www.addtoany.com/ for more information on the sharing service.
 ## Usage ##
 Use this component as is, or simply as a starting point or inspiration for how to accomplish this common task.
 
-* Include the files in webresources on your pages.
+* Include the css file in webresources on your pages.
+* Include the following script tag on your pages: `<script src="https://static.addtoany.com/menu/page.js"></script>`
 * Make the template available in your page. (This is already done for the mtk basic page via a 'decoration'.)
 * Add the Social Sharing component to your page.
 
