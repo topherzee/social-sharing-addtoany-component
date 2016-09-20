@@ -4,6 +4,7 @@ form:
       fields:
         - name: size
           class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+          sortOptions: false
           options:
             - name: default
               value: default
@@ -16,22 +17,21 @@ form:
               value: 32
             - name: 48
               value: 48
-        - name: floating
+        - name: positioning
           class: info.magnolia.ui.form.field.definition.OptionGroupFieldDefinition
           sortOptions: false
-          options: &yesno # named reference for these yes/no options
+          options:
             - name: default
               value: default
               selected: true
-            - name: yes
-              value: true
-            - name: no
-              value: false
-        - name: vertical
-          class: info.magnolia.ui.form.field.definition.OptionGroupFieldDefinition
-          sortOptions: false
-          options: *yesno # reference to above yes/no option
-
+            - name: inline
+              value: inline
+            - name: float-bottom
+              value: float-bottom
+            - name: float-left
+              value: float-left
+            - name: float-right
+              value: float-right
 actions:
   commit:
     class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition

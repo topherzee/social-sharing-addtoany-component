@@ -1,33 +1,35 @@
 # Social Sharing - AddToAny - Component template for Magnolia CMS #
 
-Easily add social sharing buttons to a page for facebook, twitter, google plus and all the services using the simple AddToAny service.
+Easily add social sharing buttons to a page for facebook, twitter, google plus and other social networks using the simple AddToAny service.
 An advantage of AddToAny is that you do not need to have a registered account with the free service.
 
 
 ## Features ##
-Supports 2, 3, 4 column layouts.
+Set size of icons, positioning of icons, and which social networks to display.
+Includes a flyout to reveal additional social networks.
+Default values can be set via parametes in the template definition, and they can be overridden by authors in the dialogs.
+See https://www.addtoany.com/ for more information on the sharing service.
 
-![Demo page with component](README-column-layout-1.png)
+![Demo page with component](README-social-sharing.png)
 
-![Seen in AdminCentral](README-column-layout-2.png)
+![Dialog for editing in AdminCentral](README-social-sharing-dialog.png)
 
 ## Usage ##
 Use this component as is, or simply as a starting point or inspiration for how to accomplish this common task.
 
 * Include the files in webresources on your pages.
-* Make the template available in your page. (This is already done for the mtk basic page via a decoration.)
-* Add the columnLayout component to your page.
-* Add other components to the areas in the columns.
+* Make the template available in your page. (This is already done for the mtk basic page via a 'decoration'.)
+* Add the Social Sharing component to your page.
 
 ## Usage - Customization ##
-* To change which components can be added to the columns, edit the templates/components/columnLayout.yaml file.
+* To change the defaults, and also to set which services are displayed and whether the icons have rounded corners, edit the templates/components/socialSharing.yaml file.
 
 ### Demo ###
 To see an example page demonstrating this component, open the Pages app in Magnolia AdminCentral and import the file in 'dev/importsSamples'.
 
 ## Dependencies ##
-The HTML markup in these components depends on
-* Bootstrap 3 CSS - Only the grid! (A css file with only the bootstrap 3 grid is included in the webresources directory.)
+* The AddToAny service is used. If you are offline, the feature will not work.
+* Also some of the services (such as Google Plus) will only work when the website is running on an actual internet domain, on localhost they will not function correctly.
 
 ## Information on Magnolia CMS
 https://docs.magnolia-cms.com

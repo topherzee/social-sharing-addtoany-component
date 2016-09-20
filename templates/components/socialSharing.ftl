@@ -1,45 +1,52 @@
 [#-------------- INCLUDE AND ASSIGN PART --------------]
 [#if content.size == 'default']
-    [#assign size = def.parameters.size]
+  [#assign size = def.parameters.size]
 [#else]
-    [#assign size = content.size]
+  [#assign size = content.size]
 [/#if]
 
-[#if content.vertical == 'default']
-    [#assign isVertical = def.parameters.vertical]
+[#-- positioning --]
+[#if content.positioning == 'default']
+  [#assign positioning = def.parameters.positioning]
 [#else]
-    [#assign isVertical = content.vertical?boolean]
+  [#assign positioning = content.positioning]
 [/#if]
 
-[#assign style = isVertical?string('a2a_vertical_style', 'a2a_default_style')]
+[#if positioning == 'inline']
+  [#assign style = 'a2a_default_style']
+  [#assign floating = '']
 
-[#if content.floating = 'default']
-    [#assign isFloating = def.parameters.floating]
-[#else]
-    [#assign isFloating = content.floating?boolean]
-[/#if]
-[#assign floating = '']
-[#if isFloating]
-    [#assign floating = 'a2a_floating_style']
+[#elseif positioning =='float-bottom']
+  [#assign style = 'a2a_default_style']
+  [#assign floating = 'a2a_floating_style floating_bottom']
 
-    [#--
-    [#if isVertical]
-        [#assign additionalFloatingStyles = "left:0px; top:150px;"]
-    [#else]
-        [#assign additionalFloatingStyles = "bottom:0px; right:0px;"]
-    [/#if]
-    --]
+[#elseif positioning =='float-left']
+  [#assign style = 'a2a_vertical_style']
+  [#assign floating = 'a2a_floating_style floating_left']
+
+[#elseif positioning =='float-right']
+  [#assign style = 'a2a_vertical_style']
+  [#assign floating = 'a2a_floating_style floating_right']
 
 [/#if]
 
 [#assign services = def.parameters.services![]]
 
+[#-- Must use inline css instead of assigning classes to handle the icons in the dynamicly created popup box.--]
+
+<!-- socialSharing BEGIN -->
 [#if !(def.parameters.rounded)]
-  [#assign square_icons = 'square-icons']
+<style>
+  .a2a_svg, .a2a_count {
+    border-radius: 0 !important;
+  }
+  .a2a_menu, .a2a_menu_find_container {
+    border-radius: 0 !important;
+  }
+</style>
 [/#if]
 
-<!-- AddToAny BEGIN -->
-<div class="socialSharing a2a_kit a2a_kit_size_${size} ${floating} ${style} social-sharing ${square_icons!}" style="${additionalFloatingStyles!}">
+<div class="socialSharing a2a_kit a2a_kit_size_${size} ${floating} ${style} social-sharing" style="${additionalFloatingStyles!}">
 <a class="a2a_dd" href="https://www.addtoany.com/share_save"></a>
 [#list services as service]
   [#if service.selected??]
@@ -47,4 +54,4 @@
   [/#if]
 [/#list]
 </div>
-<!-- AddToAny END -->
+<!-- socialSharing END -->
